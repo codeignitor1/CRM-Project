@@ -1,0 +1,15 @@
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    width: 100%;
+  }
+  .row-width{
+    width: 25%;
+  }
+  .rightBtn{
+    display: flex;
+    align-items: right;
+    justify-content: space-around;
+}

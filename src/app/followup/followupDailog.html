@@ -1,0 +1,23 @@
+<form #f="ngForm">
+    <mat-form-field>
+        <input matInput placeholder="Followup to" ngModel name="followup_to">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" ngModel name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="description" ngModel name="description">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="time" ngModel name="time">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="title" ngModel name="title">
+    </mat-form-field>
+</form>
+<div mat-dialog-actions>
+    <button mat-button (click)="submit(f.value)" tabindex="2">Submit</button>
+    <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+</div>

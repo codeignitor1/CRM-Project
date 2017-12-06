@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<mat-grid-list cols="10" rowHeight="75px">
+  
+  <mat-grid-tile [rowspan]="8" style="" colspan="8">
+    <div class="lead-div">
+      <app-lead-detail></app-lead-detail>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="6" style="" colspan="4">
+    <div class="innerGrid">
+      <app-commentbox></app-commentbox>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="10" style="" colspan="6">
+    <app-followup></app-followup>
+  </mat-grid-tile>
+</mat-grid-list>

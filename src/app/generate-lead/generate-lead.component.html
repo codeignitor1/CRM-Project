@@ -1,0 +1,20 @@
+ <mat-grid-list cols="3" rowHeight="55px">
+  <mat-grid-tile [colspan]="3" [style.background]="''" [rowspan]="11">
+    <div>
+      <h1>Generate Lead</h1>
+      <app-lead-data></app-lead-data>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="''">
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="6" [style.background]="''">
+    <app-lead-contact></app-lead-contact>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="6" [style.background]="''">
+    <app-lead-contact></app-lead-contact>
+  </mat-grid-tile>
+  
+  <button mat-raised-button color="primary" (click)="openDialog()" class="add-new-contact">Add New Contact&nbsp;
+    <fa name="plus-circle" size="2x"></fa>
+  </button>
+</mat-grid-list>

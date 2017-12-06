@@ -1,0 +1,29 @@
+
+<label>
+    <u>
+    Lead Details
+  </u>
+  </label>
+<mat-card class="card-width">
+  <div class="">
+    <ul *ngFor="let lead of leadData">
+      <label>{{lead.title}}</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>{{companyname}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label> {{lead.source}}</label>
+      <br><br>
+      <label>user name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>{{lead.status}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>{{lead.estimation_amount}}</label>
+    </ul>
+    <br>
+    <mat-grid-list cols="6">
+      <mat-grid-tile [style.background]="''" [rowspan]="4" [colspan]="3">
+        <app-lead-contact></app-lead-contact>
+      </mat-grid-tile>
+      <!-- <mat-grid-tile [style.background]="''" [rowspan]="4" [colspan]="3">
+        <app-lead-contact></app-lead-contact>
+      </mat-grid-tile>  -->
+
+    </mat-grid-list>
+  </div>
+</mat-card>

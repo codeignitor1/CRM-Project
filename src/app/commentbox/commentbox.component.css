@@ -1,0 +1,7 @@
+.div-scroll{
+    height:90px;
+    overflow:auto;
+}
+.example-container{
+    min-width: 500px;
+}

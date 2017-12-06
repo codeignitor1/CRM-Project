@@ -1,0 +1,58 @@
+
+<div>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div class="example-container">
+  <form #leadForm="ngForm"   (ngSubmit)="generateLead(leadForm.value)">
+    <mat-card>
+      <mat-form-field>
+        <input matInput placeholder="Lead Title" ngModel name='title'>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <textarea matInput placeholder="Lead Description" ngModel name='description'></textarea>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select placeholder="choose company" [(ngModel)]="cId" name="company">
+          <mat-option *ngFor="let c of company" [value]="c.id">
+            {{c.company_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select placeholder="Lead source" name="source" ngModel>
+          <mat-option *ngFor="let source of sourceArray" [value]="source">
+            {{source}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select placeholder="Lead Status" name="status" ngModel>
+          <mat-option *ngFor="let status of statusArray" [value]="status">
+            {{status}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select placeholder="Estimated amount" class="form-control" name="estimated_amount" ngModel>
+          <mat-option *ngFor="let estimated of amountArray" [value]="estimated">
+            {{estimated}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div align="right">
+        
+        <button mat-raised-button color="primary">Generate Lead</button>
+      </div>
+        
+    </mat-card>
+  </form>
+</div>

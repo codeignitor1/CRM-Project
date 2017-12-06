@@ -1,0 +1,19 @@
+<form #f="ngForm">
+<mat-form-field>
+    <input matInput ngModel name="name" placeholder="name">
+</mat-form-field>
+<mat-form-field>
+    <input matInput ngModel name="telephone" placeholder="Telephone">
+</mat-form-field>
+<mat-form-field>
+    <input matInput ngModel name="email" placeholder="email">
+</mat-form-field>
+<mat-form-field>
+    <input matInput ngModel name="website" placeholder="website">
+</mat-form-field>
+</form>
+<div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="" (click)="onSubmitClick(f.value)" tabindex="2">Ok</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
+      </div>
+      

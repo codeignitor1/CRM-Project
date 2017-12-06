@@ -1,0 +1,32 @@
+<mat-card>
+  <div class="example-container">
+    <label>
+      <u>Comment Box</u>
+    </label>
+    <br>
+    <div align="right" style="border:solid 1px" class="div-scroll" >
+      <ul *ngFor="let c of commentsofleadid">
+      {{c.comment}} -({{c.status}})
+      
+    </ul>
+    </div>
+    <form #c="ngForm" (ngSubmit)="addComment(c.value)">
+      <div>
+        <label>Status: </label>
+        <mat-form-field>
+          <mat-select placeholder="" [(ngModel)]="selectedValue" name='status'>
+            <mat-option *ngFor="let status of statusArray" [value]="status">
+              {{status}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="" align="right">
+        <mat-form-field>
+          <textarea matInput placeholder="Enter Comments" style="resize:none" ngModel name="comment"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</mat-card>

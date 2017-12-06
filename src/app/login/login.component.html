@@ -1,0 +1,43 @@
+<div class="example-container" align="center">
+  <mat-card>
+    <form #f="ngForm" class="formlevel" (ngSubmit)="login(f.value)">
+  <mat-form-field>
+    <input matInput placeholder="email" ngModel name="email" required>
+     
+      
+  </mat-form-field><br>
+  <mat-form-field>
+      <input matInput placeholder="Password" type="password" name="password" ngModel>
+    </mat-form-field>
+    <div class="button-row">
+         <button type="submit" mat-raised-button color="primary">Login</button>
+      </div><br>
+    </form>
+      <button mat-button>
+        <u>
+          Forgot password
+        </u>
+      </button>
+</mat-card>
+</div>
+<!-- <form name="userForm" novalidate ng-submit="userForm.$valid &&  vm.registerUser()">
+    <md-input-container>
+        <input name="email" placeholder="Email" data-ng-model="vm.registerUserData.email" required />
+        <div ng-messages="userForm.email.$error" ng-if='userForm.myControl.$dirty'>
+            <div ng-message="required">This is required!</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container>
+        <input name="Password" placeholder="Password" data-ng-model="vm.registerUserData.password" required />
+        <div ng-messages="userForm.Password.$error">
+            <div ng-message="required">This is required!</div>
+        </div>
+    </md-input-container>                             
+
+    <md-input-container>
+        <md-button type="submit" id="registerUser" value="Register" class="md-raised md-primary" aria-label="login" ng-disabled="login.loginForm.$invalid()">
+            Create
+        </md-button>
+    </md-input-container>
+</form> -->

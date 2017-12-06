@@ -1,0 +1,39 @@
+<!-- <div class="row">
+    <mat-card class="row">
+        
+        <app-dasstatusbar [text]=123 labelValue="Meeting Request"></app-dasstatusbar>
+        <app-dasstatusbar [text]=143 labelValue="Fixed Meeting"></app-dasstatusbar>
+        <app-dasstatusbar [text]=153 labelValue="Follow Up"></app-dasstatusbar>
+        <app-dasstatusbar [text]=163 labelValue="Response"></app-dasstatusbar>
+        <app-dasstatusbar [text]=173 labelValue="Leads"></app-dasstatusbar>
+    </mat-card>
+<div class="row-width">
+    <app-dasleadstatus></app-dasleadstatus>
+</div>
+</div> -->
+<app-navbar></app-navbar>
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile [colspan]="3" [rowspan]="2" [style.background]="">
+        <mat-card class="row">
+            <app-dasstatusbar #view (clickCompany)="click(1)" [text]=companycount labelValue="Meeting Request"></app-dasstatusbar>
+            <app-dasstatusbar #view [text]=143 (clickCompany)="click(2)" labelValue="Fixed Meeting"></app-dasstatusbar>
+            <app-dasstatusbar #view [text]=153 (clickCompany)="click(3)" labelValue="Follow Up"></app-dasstatusbar>
+            <app-dasstatusbar #view [text]=163 (clickCompany)="click(4)" labelValue="Response"></app-dasstatusbar>
+            <app-dasstatusbar #view (clickCompany)="click(5)" [text]=leadcount labelValue="Leads"></app-dasstatusbar>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="''">
+        <app-dasleadstatus></app-dasleadstatus>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="3" [rowspan]="6" [style.background]="">
+        <div *ngIf="isCompanyDetails">
+            <app-dascompanydetails></app-dascompanydetails> 
+        </div>
+        <div *ngIf="isLeads">
+            <app-lead-table [typeString]="'dashboard'"></app-lead-table>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="6" [style.background]="">
+        <app-dascalendar></app-dascalendar>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,17 @@
+ <div>
+  <mat-toolbar color="primary">
+    <span> Resource Management</span>
+    <span class="fill-space"></span>
+    <span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logoutUser()">
+            <span>Logout</span>
+         </button>
+       </mat-menu>
+    </span>
+
+  </mat-toolbar>
+</div>

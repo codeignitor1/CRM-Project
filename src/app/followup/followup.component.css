@@ -1,0 +1,11 @@
+.calendar-height{
+    height: 600px;
+}
+.mat-grid-list{
+    position: initial;
+}
+.list-scroll{
+    height: 500px;
+    padding-top: 150px;
+    overflow: auto;
+}

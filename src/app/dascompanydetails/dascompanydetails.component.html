@@ -1,0 +1,54 @@
+<mat-card class="card-height">
+  <div align="right">
+  <button mat-raised-button color="primary" [routerLink]="['/addcompany']">Add Company</button>
+</div>
+<div>
+    <div class="example-container mat-elevation-z8">
+        <div class="example-header">
+          <mat-form-field floatPlaceholder="never">
+            <input matInput #filter placeholder="Filter users"> 
+          </mat-form-field>
+        </div>
+      
+        <mat-table #table [dataSource]="dataSource">
+      
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef hidden>Id </mat-header-cell>
+            <mat-cell *matCellDef="let result" hidden> {{result.id}} </mat-cell>
+          </ng-container>
+
+          <!-- company Column -->
+          <ng-container matColumnDef="company_name">
+            <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
+            <mat-cell *matCellDef="let result"> {{result.company_name}} </mat-cell>
+          </ng-container>
+      
+          <!-- website Column -->
+          <ng-container matColumnDef="website">
+            <mat-header-cell *matHeaderCellDef> website </mat-header-cell>
+            <mat-cell *matCellDef="let result"> {{result.website}} </mat-cell>
+          </ng-container>
+      
+          <!-- source Column -->
+          <ng-container matColumnDef="source">
+            <mat-header-cell *matHeaderCellDef> source </mat-header-cell>
+            <mat-cell *matCellDef="let result"> {{result.source}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef> status </mat-header-cell>
+              <mat-cell *matCellDef="let result"> {{result.status}} </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/company',row.id]"></mat-row>
+        </mat-table>
+      </div>
+      
+</div>
+
+</mat-card>

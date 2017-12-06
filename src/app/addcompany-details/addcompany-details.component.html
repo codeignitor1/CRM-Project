@@ -1,0 +1,115 @@
+<form #f="ngForm" (ngSubmit)="addCompany(f.value)">
+  <div align="center">
+    <h1>Add Company</h1><br/>
+    <div class="rightBtn">
+          <button mat-raised-button><< Go Back</button>
+          <button mat-raised-button color="primary">Add Company</button>
+   </div>
+    <div align="right">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div><br/>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Company Details
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card>
+        <mat-form-field>
+          <input matInput ngModel name="company_name" placeholder="CompanyName">
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput placeholder="Website" ngModel name="website">
+        </mat-form-field><br>
+        <mat-form-field>
+         
+          <mat-select placeholder="Status" ngModel name="status">
+              <mat-option *ngFor="let i of statusArray" value="i">
+                  {{i}}
+              </mat-option>
+          </mat-select>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput placeholder="Board No" ngModel name="board_number">
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <textarea rows='5' matInput placeholder="About Company" ngModel name="about_company"></textarea>
+        </mat-form-field>
+        
+      </mat-card>
+
+    </mat-card>
+    <br/>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Other Details
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card>
+        <mat-form-field>
+          <input 
+          matInput  [(ngModel)]="username" name="added_by" placeholder="Added By">
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <mat-select placeholder="Source" ngModel name="source">
+              <mat-option *ngFor="let source of sourceArray" value="source">
+                  {{source}}
+                </mat-option>
+                <mat-option value="no">
+                  no
+                </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="Client Reference" ngModel name="client_reference">
+            <mat-option value='yes'>
+              yes
+            </mat-option>
+            <mat-option value="no">
+              no
+            </mat-option>
+          </mat-select>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput placeholder="Cold Call" ngModel name="cold_call" >
+        </mat-form-field><br/>
+
+        <mat-form-field>
+          <mat-select placeholder="Rishi's Friend" ngModel name="rishi_friend">
+              <mat-option value="yes">
+                  yes
+                </mat-option>
+                <mat-option value="no">
+                  no
+                </mat-option>
+          </mat-select>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput placeholder="Others" ngModel name="other">
+        </mat-form-field><br/>
+
+        <mat-form-field>
+          <mat-select placeholder="Self Generated" ngModel name="self_generated">
+              <mat-option value="yes">
+                  yes
+                </mat-option>
+                <mat-option value="no">
+                  no
+                </mat-option>
+          </mat-select>
+        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput placeholder="Events" ngModel name="events">
+        </mat-form-field>
+
+      </mat-card>
+    </mat-card><br/>
+  </div>
+ 
+</form>

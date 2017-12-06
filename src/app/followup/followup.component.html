@@ -1,0 +1,52 @@
+<mat-grid-list cols="2" rowHeight="100px">
+  <mat-grid-tile [colspan]="1" [rowspan]="7" [style.background]="''">
+    <div>
+      <label>
+      <u>Follow Ups Request</u>
+
+    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <button mat-raised-button color="primary" (click)="openDialog()">Set Follow-up</button>
+      <div class="calendar-height" align="center">
+        <span mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </span>
+        <span mwlCalendarToday [(viewDate)]="viewDate">
+          <b>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en'}}</b>
+        </span>
+        <span mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </span>
+
+        <div>
+          <mwl-calendar-month-view [viewDate]="viewDate" [events]="events"[refresh]="refresh"
+          (dayClicked)="dayClicked($event.day)" [activeDayIsOpen]="activeDayIsOpen">
+          
+          </mwl-calendar-month-view>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="calendar-height" align="center">
+      <app-dascalendar></app-dascalendar>
+    </div> -->
+
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="5" [style.background]="''">
+    <!-- <div><label><u>Recently added request</u></label><br>
+      <a mat-button routerLink=".">Meeting set with ABC client 27-oct-2017</a><br>
+    </div> -->
+    <mat-list class="list-scroll">
+      <h3 mat-subheader>
+        <u>Recently added request</u>
+      </h3>
+      <mat-list-item *ngFor="let r of result">
+
+        <h4 mat-line>
+          <a mat-button routerLink="."> {{r.title}} {{r.followup_to}}  on  {{r.date}} </a>
+          <br> <br>
+        </h4>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-grid-tile>
+</mat-grid-list>

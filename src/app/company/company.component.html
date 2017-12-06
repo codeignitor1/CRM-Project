@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div align="right">
+  <!-- <button mat-raised-button color="primary">Escalate Lead</button> -->
+</div>
+<mat-grid-list cols="8" rowHeight="50px" gutterSize="20px">
+  <mat-grid-tile [rowspan]="7" style="" colspan="8">
+    <div class="company-div">
+      <app-company-details></app-company-details>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="7" style="" colspan="8">
+    <app-lead-table typeString="company"></app-lead-table>
+  </mat-grid-tile>
+  <!-- <mat-grid-tile [rowspan]="6" style="background:green" colspan="4">
+    <div class="innerGrid">
+      <app-commentbox></app-commentbox>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="6" style="background:blue" colspan="4">
+    <app-followup></app-followup>
+  </mat-grid-tile> -->
+</mat-grid-list>

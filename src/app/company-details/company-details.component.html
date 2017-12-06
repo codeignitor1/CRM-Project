@@ -1,0 +1,26 @@
+<label>
+  <u>
+  Company Details
+</u>
+</label>
+<mat-card class="card-width">
+  <div class="">
+    <ul *ngFor="let c of company">
+      <label>{{c.company_name}}</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Established From</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label> Others</label>
+      <br><br>
+      <label>{{c.website}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Main Bussiness</label>
+    </ul>
+    <br>
+    <mat-grid-list cols="6">
+      <mat-grid-tile [style.background]="''" [rowspan]="4" [colspan]="3">
+        <app-lead-contact></app-lead-contact>
+      </mat-grid-tile>
+      <mat-grid-tile [style.background]="''" [rowspan]="4" [colspan]="3">
+        <app-lead-contact></app-lead-contact>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</mat-card>

@@ -1,0 +1,40 @@
+<label>
+  <u>
+  Lead Details
+</u>
+</label>
+<div align="right">
+  <button mat-raised-button color="primary" [routerLink]="['/generateLead']">Generate Lead</button>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- title Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Lead Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="source">
+      <mat-header-cell *matHeaderCellDef> Source </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.source}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="estimated_amount">
+      <mat-header-cell *matHeaderCellDef> Est amount </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.estimated_amount}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/lead',row.id]"></mat-row>
+  </mat-table>
+</div>
